@@ -1,12 +1,15 @@
 import logging
 import azure.functions as func
 from azure.durable_functions.constants import DEFAULT_LOCAL_HOST
+from azure.durable_functions.durable_orchestration_client import getClient
 
 
 def main(req: func.HttpRequest, starter: str) -> str:
     logging.warn(f"req.params = {req.params}")
     logging.warn(f"starter = {starter}")
     logging.warn(f"DEFAULT_LOCAL_HOST = {DEFAULT_LOCAL_HOST}")
+    client = getClient("client context")
+    logging.warn(f"client._eventNamePlaceholder = {client._eventNamePlaceholder}")
     return func.HttpResponse(status_code=200, body="success")
 
 '''
