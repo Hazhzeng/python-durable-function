@@ -1,2 +1,2 @@
 azure-functions==1.0.0b5
-
+#pip install -e azure-functions-durable-python
