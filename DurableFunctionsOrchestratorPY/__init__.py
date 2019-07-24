@@ -23,10 +23,11 @@ def generator_function(context):
     return outputs
 
 
-async def main(context: str) -> str:
+def main(context: str) -> str:
     logging.warn("Durable Orchestration Trigger: " + context)
     orchestrate = df.Orchestrator.create(generator_function)
     logging.warn("!!!type(orchestrate) " + str(type(orchestrate)))
-    result = await orchestrate(context)
+    result = orchestrate(context)
+    logging.warn("!!!serialized json : " + result)
     logging.warn("!!!type(result) " + str(type(result)))
     return result
