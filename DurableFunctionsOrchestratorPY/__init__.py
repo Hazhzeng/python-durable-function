@@ -23,7 +23,7 @@ def generator_function(context):
     return outputs
 
 
-def main(context: str) -> str:
+def main(context: str):
     logging.warn("Durable Orchestration Trigger: " + context)
     orchestrate = df.Orchestrator.create(generator_function)
     logging.warn("!!!type(orchestrate) " + str(type(orchestrate)))
