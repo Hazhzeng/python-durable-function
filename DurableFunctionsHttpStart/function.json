@@ -13,9 +13,9 @@
       ]
     },
     {
+      "name": "msg",
       "direction": "out",
-      "name": "$return",
-      "type": "http"
+      "type": "http",
     },
     {
       "name": "starter",
